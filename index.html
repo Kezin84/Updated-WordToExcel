@@ -321,6 +321,12 @@ margin-right: 10%;
     const table = document.getElementById("wordTable");
     const rows = table.getElementsByTagName("tr");
     const searchInput = document.getElementById("searchInput");
+    const initialDisplayState = []; // Lưu trạng thái hiển thị ban đầu của các hàng
+
+    // Lưu trạng thái hiển thị ban đầu
+    for (let i = 1; i < rows.length; i++) {
+        initialDisplayState.push(rows[i].style.display);
+    }
 
     searchInput.addEventListener("input", function () {
         const searchTerm = searchInput.value.trim();
@@ -347,7 +353,17 @@ margin-right: 10%;
             }
         }
     });
+
+    // Khôi phục trạng thái hiển thị ban đầu khi xoá nội dung tìm kiếm
+    searchInput.addEventListener("input", function () {
+        if (searchInput.value === "") {
+            for (let i = 1; i < rows.length; i++) {
+                rows[i].style.display = initialDisplayState[i - 1];
+            }
+        }
+    });
 });
+
 
 
         function updateClock() {
