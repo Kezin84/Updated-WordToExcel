@@ -186,7 +186,22 @@ margin-right: 10%;
     font-style: italic;
 
 }
+.success-row {
+    background-color: #d4edda; /* Màu nền xanh lá cây */
+    animation: success 1s ease-in-out;
+}
 
+@keyframes success {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
         
     </style>
 </head>
@@ -317,7 +332,7 @@ margin-right: 10%;
 </div>
     </div>
     <script>
-   document.addEventListener("DOMContentLoaded", function () {
+  document.addEventListener("DOMContentLoaded", function () {
     const table = document.getElementById("wordTable");
     const rows = table.getElementsByTagName("tr");
     const searchInput = document.getElementById("searchInput");
@@ -363,7 +378,6 @@ margin-right: 10%;
         }
     });
 });
-
 
 
         function updateClock() {
@@ -774,6 +788,7 @@ document.getElementById("exportToExcelButton").addEventListener("click", functio
 let sttCounter2 = 1;
 
 document.getElementById("addButton1").addEventListener("click", function () {
+    alert("Thêm thành công rùi nhoa !")
     // Lấy danh sách các tệp được chọn từ đối tượng input có ID "excelFileInput"
     var files = document.getElementById("excelFileInput").files;
 
@@ -806,7 +821,7 @@ document.getElementById("addButton1").addEventListener("click", function () {
 
             // Thêm dữ liệu vào bảng HTML
             var table = document.getElementById("wordTable");
-
+            
             // Create a new row at the end of the table
             var newRow = table.insertRow(-1); // -1 means insert at the end of the table
 
@@ -848,8 +863,11 @@ document.getElementById("addButton1").addEventListener("click", function () {
             var cell11 = newRow.insertCell(11);
             cell11.innerHTML = endUserWebsite;
             updateSTT();
-        };
+            // Sau khi thêm dữ liệu vào hàng
 
+
+        };
+        
         // Đọc tệp dưới dạng dữ liệu nhị phân
         reader.readAsBinaryString(file);
     }
