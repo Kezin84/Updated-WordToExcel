@@ -216,37 +216,37 @@ margin-right: 10%;
     
         <div class="label-input-container">
             <label for="englishCompanyName">End user Company Name* (English name):</label>
-            <input type="text" id="englishCompanyName" name="englishCompanyName" placeholder="Company Name* (English name)" >
+            <input type="text" id="englishCompanyName" name="englishCompanyName" placeholder="Company Name* (English name)" required>
         </div>
         
         <div class="label-input-container">
             <label for="vietnameseCompanyName">End user Company Name* (Vietnamese):</label>
-            <input type="text" id="vietnameseCompanyName" name="vietnameseCompanyName" placeholder=" Company Name* (Vietnamese)" >
+            <input type="text" id="vietnameseCompanyName" name="vietnameseCompanyName" placeholder=" Company Name* (Vietnamese)" required>
         </div>
         
         <div class="label-input-container">
             <label for="companyAddress">Company Address*:</label>
-            <input type="text" id="companyAddress" name="companyAddress" placeholder="Company Address*" >
+            <input type="text" id="companyAddress" name="companyAddress" placeholder="Company Address*" required>
         </div>
         
         <div class="label-input-container">
             <label for="estimatedClosureMonth">Estimated Closure Month*:</label>
-            <input type="text" id="estimatedClosureMonth" name="estimatedClosureMonth" placeholder="Estimated Closure Month*" >
+            <input type="text" id="estimatedClosureMonth" name="estimatedClosureMonth" placeholder="Estimated Closure Month*" required>
         </div>
         
         <div class="label-input-container">
             <label for="projectName">Project Name*:</label>
-            <input type="text" id="projectName" name="projectName" placeholder="Project Name*" >
+            <input type="text" id="projectName" name="projectName" placeholder="Project Name*" required>
         </div>
         
         <div class="label-input-container">
             <label for="qty">Qty*:</label>
-            <input type="number" id="qty" name="qty" placeholder="Qty*" >
+            <input type="number" id="qty" name="qty" placeholder="Qty*" required>
         </div>
         
         <div class="label-input-container">
             <label for="sku">SKU/ Product/ Description*:</label>
-            <textarea style="border-radius: 10px;height: 100px;" id="sku" name="sku" placeholder="SKU/ Product/ Description" ></textarea>
+            <textarea style="border-radius: 10px;height: 100px;" id="sku" name="sku" placeholder="SKU/ Product/ Description" required></textarea>
         </div>
         
         <div class="label-input-container">
@@ -261,7 +261,7 @@ margin-right: 10%;
         
         <div class="label-input-container">
             <label for="endUserEmail">End User Email*:</label>
-            <input type="email" id="endUserEmail" name="endUserEmail" placeholder="End User Email*" >
+            <input type="email" id="endUserEmail" name="endUserEmail" placeholder="End User Email*" required>
         </div>
         
         <div class="label-input-container">
@@ -788,10 +788,9 @@ document.getElementById("exportToExcelButton").addEventListener("click", functio
 let sttCounter2 = 1;
 
 document.getElementById("addButton1").addEventListener("click", function () {
-    alert("Thêm thành công rùi nhoa !")
     // Lấy danh sách các tệp được chọn từ đối tượng input có ID "excelFileInput"
     var files = document.getElementById("excelFileInput").files;
-
+    alert("Thêm Thành công")
     // Lặp qua danh sách các tệp được chọn
     for (var i = 0; i < files.length; i++) {
         var file = files[i];
